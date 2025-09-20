@@ -1,0 +1,6 @@
+base\BaseTest.class
+tests\CartTest.class
+tests\CheckoutTest.class
+tests\FavouritesTest.class
+tests\LoginTest.class
+utils\TestDataProvider.class

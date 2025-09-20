@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-20T12:36:46 EAT" name="SauceDemo Automation Suite" finished-at="2025-09-20T12:36:46 EAT" duration-ms="14">
+    <groups>
+    </groups>
+    <test started-at="2025-09-20T12:36:46 EAT" name="Login Tests" finished-at="2025-09-20T12:36:46 EAT" duration-ms="14">
+    </test> <!-- Login Tests -->
+  </suite> <!-- SauceDemo Automation Suite -->
+</testng-results>

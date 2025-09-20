@@ -1,0 +1,21 @@
+12:32:09.954 [ApplicationImpl pooled thread 926] INFO  c.b.l.BrowserStackRunExtension - maven
+12:32:09.954 [ApplicationImpl pooled thread 926] INFO  com.browserstack.utils.Helpers - null
+12:34:05.681 [ApplicationImpl pooled thread 944] INFO  c.b.l.BrowserStackRunExtension - maven
+12:34:05.681 [ApplicationImpl pooled thread 944] INFO  com.browserstack.utils.Helpers - null
+12:34:22.960 [ApplicationImpl pooled thread 944] INFO  c.b.l.BrowserStackRunExtension - maven
+12:34:22.961 [ApplicationImpl pooled thread 944] INFO  com.browserstack.utils.Helpers - null
+12:35:51.754 [ApplicationImpl pooled thread 955] INFO  c.b.l.BrowserStackRunExtension - maven
+12:35:51.754 [ApplicationImpl pooled thread 955] INFO  com.browserstack.utils.Helpers - null
+12:36:38.735 [ApplicationImpl pooled thread 960] INFO  c.b.l.BrowserStackRunExtension - maven
+12:36:38.735 [ApplicationImpl pooled thread 960] INFO  com.browserstack.utils.Helpers - null
+12:37:17.029 [AWT-EventQueue-0] INFO  c.b.actions.EnableBrowserStack - Setting enable browserstack run update
+12:37:17.048 [AWT-EventQueue-0] INFO  c.b.actions.DisableBrowserStack - Setting disable browserstack run update
+12:37:17.071 [AWT-EventQueue-0] INFO  c.b.actions.EnableBrowserStack - Setting enable browserstack run update
+12:37:17.087 [AWT-EventQueue-0] INFO  c.b.actions.DisableBrowserStack - Setting disable browserstack run update
+12:37:18.972 [AWT-EventQueue-0] INFO  c.b.actions.EnableBrowserStack - Setting enable browserstack run update
+12:37:18.991 [AWT-EventQueue-0] INFO  c.b.actions.DisableBrowserStack - Setting disable browserstack run update
+12:40:55.138 [AWT-EventQueue-0] INFO  c.b.launchers.LaunchMavenCommand - Integrate source: testng:intellij:v1.1.6
+12:40:55.139 [AWT-EventQueue-0] INFO  c.b.launchers.LaunchMavenCommand - Executing maven archetype command - browserstack-sdk-archetype-integrate
+12:40:55.226 [ApplicationImpl pooled thread 961] INFO  c.b.l.BrowserStackRunExtension - maven
+12:40:55.226 [ApplicationImpl pooled thread 961] INFO  com.browserstack.utils.Helpers - null
+12:41:05.278 [java.exe] INFO  c.b.launchers.LaunchMavenCommand - Completed maven archetype command

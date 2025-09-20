@@ -20,6 +20,11 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>1.40.5</version>
+        </dependency>
 
         <!-- TestNG -->
         <dependency>

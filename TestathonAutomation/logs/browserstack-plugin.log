@@ -19,3 +19,23 @@
 12:40:55.226 [ApplicationImpl pooled thread 961] INFO  c.b.l.BrowserStackRunExtension - maven
 12:40:55.226 [ApplicationImpl pooled thread 961] INFO  com.browserstack.utils.Helpers - null
 12:41:05.278 [java.exe] INFO  c.b.launchers.LaunchMavenCommand - Completed maven archetype command
+12:43:12.824 [ApplicationImpl pooled thread 961] INFO  c.b.l.BrowserStackRunExtension - maven
+12:43:12.825 [ApplicationImpl pooled thread 961] INFO  com.browserstack.utils.Helpers - true
+12:44:59.202 [ApplicationImpl pooled thread 972] INFO  c.b.l.BrowserStackRunExtension - maven
+12:44:59.202 [ApplicationImpl pooled thread 972] INFO  com.browserstack.utils.Helpers - true
+12:45:20.997 [ApplicationImpl pooled thread 990] INFO  c.b.l.BrowserStackRunExtension - maven
+12:45:20.998 [ApplicationImpl pooled thread 990] INFO  com.browserstack.utils.Helpers - true
+12:45:33.954 [ApplicationImpl pooled thread 980] INFO  c.b.l.BrowserStackRunExtension - maven
+12:45:33.954 [ApplicationImpl pooled thread 980] INFO  com.browserstack.utils.Helpers - true
+12:45:46.450 [ApplicationImpl pooled thread 972] INFO  c.b.l.BrowserStackRunExtension - maven
+12:45:46.450 [ApplicationImpl pooled thread 972] INFO  com.browserstack.utils.Helpers - true
+13:14:09.636 [ApplicationImpl pooled thread 1024] INFO  c.b.l.BrowserStackRunExtension - maven
+13:14:09.637 [ApplicationImpl pooled thread 1024] INFO  com.browserstack.utils.Helpers - true
+13:14:17.007 [ApplicationImpl pooled thread 1054] INFO  c.b.l.BrowserStackRunExtension - maven
+13:14:17.007 [ApplicationImpl pooled thread 1054] INFO  com.browserstack.utils.Helpers - true
+13:36:15.107 [ApplicationImpl pooled thread 1097] INFO  c.b.l.BrowserStackRunExtension - testng
+13:36:15.107 [ApplicationImpl pooled thread 1097] INFO  com.browserstack.utils.Helpers - true
+13:36:15.108 [ApplicationImpl pooled thread 1097] INFO  com.browserstack.utils.Helpers - C:/Users/Rhoda M/.m2/repository/com/browserstack/browserstack-java-sdk/1.40.5/browserstack-java-sdk-1.40.5.jar
+13:36:15.108 [ApplicationImpl pooled thread 1097] INFO  c.b.l.BrowserStackRunExtension - Agent path: C:/Users/Rhoda M/.m2/repository/com/browserstack/browserstack-java-sdk/1.40.5/browserstack-java-sdk-1.40.5.jar
+13:36:15.108 [ApplicationImpl pooled thread 1097] INFO  c.b.l.BrowserStackRunExtension - Adding Browserstack SDK javaagent argline
+13:36:15.108 [ApplicationImpl pooled thread 1097] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.6

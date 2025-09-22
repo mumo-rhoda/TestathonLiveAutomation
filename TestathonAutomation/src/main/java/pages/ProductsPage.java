@@ -1,68 +1,89 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
 import java.util.List;
 
-public class ProductsPage {
-    private WebDriver driver;
+public class ProductsPage extends BasePage {
 
-    // Cart icon (top nav)
-    @FindBy(xpath = "//*[@id='cart']")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div/main/div[2]")
+    private List<WebElement> productCards;
+
+    @FindBy(xpath = "//*[@id=\"1\"]/div[4]")
+    private List<WebElement> addToCartButtons;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div/div[2]/span")
     private WebElement cartIcon;
 
-    // Favourites icon (top nav, example locator)
-    @FindBy(xpath = "//*[@id='favourites']")
-    private WebElement favouritesIcon;
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div/div[2]/span/span")
+    private WebElement cartCount;
 
-    // Page title
-    @FindBy(css = "h1.page-title")
-    private WebElement pageTitle;
+    @FindBy(xpath = "//*[@id=\"11\"]/p")
+    private List<WebElement> productNames;
+
+    @FindBy(xpath = "//*[@id=\"12\"]/div[3]/div[1]/b")
+    private List<WebElement> productPrices;
+
+
 
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
-    // ✅ Verify Products page is loaded
-    public boolean isPageLoaded() {
-        try {
-            return pageTitle.isDisplayed();
-        } catch (Exception e) {
-            return false;
+
+    public int getProductCount() {
+        return productCards.size();
+    }
+
+    public void addProductToCart(int index) {
+        if (index < addToCartButtons.size()) {
+            click(addToCartButtons.get(index));
+            // Wait for cart to update
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    // ✅ Get all product names
-    public List<WebElement> getAllProducts() {
-        return driver.findElements(By.cssSelector(".product-item"));
+    public void addMultipleProductsToCart(int count) {
+        for (int i = 0; i < Math.min(count, getProductCount()); i++) {
+            addProductToCart(i);
+        }
     }
 
-    // ✅ Add product to cart by product name
-    public void addProductToCart(String productName) {
-        WebElement product = driver.findElement(By.xpath("//div[contains(@class,'product-item')][.//h2[text()='" + productName + "']]"));
-        WebElement addToCartBtn = product.findElement(By.xpath(".//button[contains(@class,'add-to-cart')]"));
-        addToCartBtn.click();
+    public CartPage navigateToCart() {
+        click(cartIcon);
+        return new CartPage(driver);
     }
 
-    // ✅ Mark product as favourite by product name
-    public void addProductToFavourites(String productName) {
-        WebElement product = driver.findElement(By.xpath("//div[contains(@class,'product-item')][.//h2[text()='" + productName + "']]"));
-        WebElement favBtn = product.findElement(By.xpath(".//button[contains(@class,'add-to-fav')]"));
-        favBtn.click();
+    public int getCartItemCount() {
+        try {
+            if (isDisplayed(cartCount)) {
+                String countText = getText(cartCount);
+                return Integer.parseInt(countText);
+            }
+        } catch (NumberFormatException e) {
+            // If cart is empty, count might not be displayed
+        }
+        return 0;
     }
 
-    // ✅ Open Cart
-    public void openCart() {
-        cartIcon.click();
+    public String getProductName(int index) {
+        if (index < productNames.size()) {
+            return getText(productNames.get(index));
+        }
+        return "";
     }
 
-    // ✅ Open Favourites
-    public void openFavourites() {
-        favouritesIcon.click();
+    public double getProductPrice(int index) {
+        if (index < productPrices.size()) {
+            String priceText = getText(productPrices.get(index)).replaceAll("[^0-9.]", "");
+            return Double.parseDouble(priceText);
+        }
+        return 0.0;
     }
+
 }

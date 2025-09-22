@@ -1,56 +1,68 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends BasePage {
 
-    // Dropdown button (when clicked, expands list of usernames)
-    @FindBy(xpath = "//*[@id='username']/div/div[1]")
-    private WebElement usernameDropdown;
+    // Page Elements - Update these selectors based on actual website
+    @FindBy(xpath = "//*[@id=\"username\"]/div/div[1]")
+    private WebElement emailField;
 
-    // Password input
-    @FindBy(xpath = "//*[@id='password']/div/div[1]/input")
+    @FindBy(xpath = "//*[@id=\"password\"]/div/div[1]")
     private WebElement passwordField;
 
-    // Login button
-    @FindBy(xpath= "//*[@id='login-btn']")
-    private WebElement loginButton;
+    @FindBy(xpath = "//*[@id=\"login-btn\"]")
+    private WebElement signInButton;
 
-    // Error message
-    @FindBy(xpath = "//*[@id='__next']/div[2]/div/form/div[2]/h3")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div/form/div[2]/h3")
     private WebElement errorMessage;
 
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div/div[1]/div/div/div[1]/a/svg")
+    private WebElement pageTitle;
+
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
-    // Custom dropdown selection
-    public void selectUsername(String username) {
-        usernameDropdown.click(); // expand dropdown
-        WebElement option = driver.findElement(By.xpath("//div[@id='username']//div[text()='" + username + "']"));
-        option.click();
+    public void enterEmail(String email) {
+        type(emailField, email);
     }
 
     public void enterPassword(String password) {
-        passwordField.clear();
-        passwordField.sendKeys(password);
+        type(passwordField, password);
     }
 
-    public void clickLogin() {
-        loginButton.click();
+    public void clickSignIn() {
+        click(signInButton);
     }
+
+    public ProductsPage login(String email, String password) {
+        enterEmail(email);
+        enterPassword(password);
+        clickSignIn();
+        return new ProductsPage(driver);
+    }
+
+    public boolean isLoginPageDisplayed() {
+        return isDisplayed(pageTitle) || getCurrentUrl().contains("?signin=true");
+    }
+
+    public boolean isErrorMessageDisplayed() {
+        return isDisplayed(errorMessage);
+    }
+
 
     public String getErrorMessage() {
-        try {
-            return errorMessage.getText();
-        } catch (Exception e) {
-            return "";
+        if (isErrorMessageDisplayed()) {
+            return getText(errorMessage);
         }
+        return "";
+    }
+
+    public void waitForPageLoad() {
+        waitForElementToBeVisible(emailField);
     }
 }
